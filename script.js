@@ -45,3 +45,13 @@
 
 
 //END OF ASSIGNMENT
+
+const number = document.querySelector('#fact-count');
+const list = document.querySelector('#cat-facts');
+
+
+async function getCatFacts(num) {
+    const response = await fetch(`https://catfact.ninja/facts?limit=${num}`);
+    const facts = await response.json();
+    return facts    
+}
